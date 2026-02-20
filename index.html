@@ -3,171 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiruthika Portfolio</title>
+<title>Kiruthika | Portfolio</title>
 
 <style>
 
-/* ===== RESET ===== */
+/* ===============================
+   RESET
+=================================*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* ===== BODY ===== */
-body {
     font-family: 'Segoe UI', sans-serif;
+}
+
+body {
     color: white;
-    background: black;
     overflow-x: hidden;
+    background: #0b1220;
 }
 
-/* ===== SCROLL HEIGHT FOR ANIMATION ===== */
-.scroll-container {
-    height: 400vh; /* controls animation scroll length */
-}
-
-/* ===== BACKGROUND FRAME CONTAINER ===== */
-#bg-animation {
+/* ===============================
+   SCROLL FRAME BACKGROUND
+=================================*/
+canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: -2;
 }
 
-#bg-animation img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ===== LIGHT OVERLAY (NOT WHITE BOX) ===== */
-.overlay {
+/* Light overlay for readability */
+body::before {
+    content: "";
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(2px);
+    inset: 0;
+    background: rgba(5, 10, 25, 0.35);
     z-index: -1;
 }
 
-/* ===== GLASS SECTIONS ===== */
-.section {
+/* ===============================
+   MAIN CONTENT
+=================================*/
+.container {
     width: 85%;
-    margin: 60px auto;
-    padding: 35px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 0;
+}
 
+/* Name Section */
+.hero h1 {
+    font-size: 42px;
+    color: #4fc3ff;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #cfd8dc;
+}
+
+/* Section Titles */
+.section-title {
+    margin: 50px 0 20px;
+    font-size: 22px;
+    border-left: 4px solid #4fc3ff;
+    padding-left: 12px;
+}
+
+/* ===============================
+   GLASS CONTAINER (NO BLACK BOX)
+=================================*/
+.section-box {
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: 0.3s ease;
 }
 
-.section:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+.section-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
 }
 
-/* ===== TEXT STYLES ===== */
-h1 {
-    color: #00bfff;
-    font-size: 42px;
-    margin-bottom: 10px;
+.section-box p,
+.section-box li {
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-h2 {
-    border-left: 4px solid #00bfff;
-    padding-left: 12px;
-    margin-bottom: 20px;
+.section-box ul {
+    margin-left: 20px;
 }
 
-p {
-    line-height: 1.8;
-    font-size: 16px;
-    margin-bottom: 15px;
+a {
+    color: #4fc3ff;
+    text-decoration: none;
 }
 
-strong {
-    color: #00bfff;
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #aaa;
 }
 
 </style>
 </head>
 <body>
 
-<!-- Scroll Height Container -->
-<div class="scroll-container"></div>
+<canvas id="bg"></canvas>
 
-<!-- Background Animation -->
-<div id="bg-animation">
-    <img src="frames/ezgif-frame-001.jpg" id="frame">
-</div>
+<div class="container">
 
-<!-- Light Overlay -->
-<div class="overlay"></div>
+    <div class="hero">
+        <h1>Kiruthika</h1>
+        <p>ECE Student · Industrial Automation Enthusiast · Problem Solver</p>
+    </div>
 
-<!-- Resume Content -->
-<div class="section">
-    <h1>Kiruthika</h1>
-    <p>ECE Student · Industrial Automation Enthusiast · Problem Solver</p>
-</div>
+    <h2 class="section-title">Profile Summary</h2>
+    <div class="section-box">
+        <p>
+            Focused and detail-oriented Electronics and Communication Engineering student with a CGPA of 8.23.
+            Skilled in PLC programming, sensor integration, embedded systems, and industrial automation.
+            Strong foundation in analog and digital electronics, signals & systems, and communication engineering.
+        </p>
+    </div>
 
-<div class="section">
-    <h2>Profile Summary</h2>
-    <p>
-        Focused and detail-oriented Electronics and Communication Engineering student 
-        with a CGPA of 8.23. Skilled in PLC programming, sensor integration,
-        embedded systems, and industrial automation.
-    </p>
-</div>
-
-<div class="section">
-    <h2>Education</h2>
-
-    <p>
-        <strong>B.E. Electronics and Communication Engineering (2022–2026)</strong><br>
+    <h2 class="section-title">Education</h2>
+    <div class="section-box">
+        <p><strong>B.E. ECE (2022–2026)</strong><br>
         Government College of Engineering, Tirunelveli<br>
-        CGPA: 8.23
-    </p>
+        CGPA: 8.23</p>
 
-    <p>
-        <strong>12th Standard (2022)</strong><br>
-        540 / 600
-    </p>
+        <br>
 
-    <p>
-        <strong>10th Standard (2020)</strong><br>
-        450 / 500
-    </p>
+        <p><strong>12th Standard (2022)</strong><br>
+        Rosemary Matric Hr. Sec. School – 540/600</p>
+
+        <br>
+
+        <p><strong>10th Standard (2020)</strong><br>
+        Rosemary Matric Hr. Sec. School – 450/500</p>
+    </div>
+
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-box">
+        <ul>
+            <li><strong>Programming:</strong> C, Python</li>
+            <li><strong>Core Engineering:</strong> PLC Programming, Industrial Automation, Embedded Systems</li>
+            <li><strong>Tools:</strong> Arduino, SCADA Basics, Ladder Logic</li>
+            <li><strong>Soft Skills:</strong> Communication, Teamwork, Adaptability</li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Projects</h2>
+    <div class="section-box">
+        <p><strong>Industrial Automation using PLC</strong><br>
+        Designed PLC-based automation system for industrial processes with ladder logic and I/O monitoring.</p>
+
+        <br>
+
+        <p><strong>Garbage Segregation System</strong><br>
+        Automated waste classification using sensors and Arduino for smart waste management.</p>
+
+        <br>
+
+        <p><strong>Water Level Indicator</strong><br>
+        Transistor-based monitoring system with LED & buzzer alerts.</p>
+    </div>
+
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-box">
+        <ul>
+            <li>Industrial Automation & PLC Fundamentals – LinkedIn Learning</li>
+            <li>Python for Engineers – Google / Coursera</li>
+            <li>Introduction to IoT & Embedded Systems – Microsoft Learn</li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Contact</h2>
+    <div class="section-box">
+        <p>Email: kiruthika@email.com</p>
+        <p>Phone: +91 98XXX XXXXX</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/kiruthika</a></p>
+        <p>GitHub: <a href="#">github.com/kiruthika</a></p>
+    </div>
+
+    <footer>
+        © 2026 Kiruthika. Built with precision & purpose.
+    </footer>
+
 </div>
 
-<!-- ===== SCROLL FRAME SCRIPT ===== -->
-<script>
+<!-- ===============================
+     SCROLL FRAME ANIMATION JS
+=================================-->
 
-const frame = document.getElementById("frame");
-const totalFrames = 240;
+<script>
+const frameCount = 240;
+const canvas = document.getElementById("bg");
+const context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const currentFrame = index => 
+  `frames/ezgif-frame-${String(index + 1).padStart(3, '0')}.jpg`;
+
+const images = [];
+const image = new Image();
+
+for (let i = 0; i < frameCount; i++) {
+  const img = new Image();
+  img.src = currentFrame(i);
+  images.push(img);
+}
+
+function render() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+}
+
+image.onload = render;
+image.src = currentFrame(0);
 
 window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollFraction = scrollTop / docHeight;
+  const scrollTop = document.documentElement.scrollTop;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.floor((scrollTop / maxScroll) * frameCount)
+  );
 
-    let frameIndex = Math.min(
-        totalFrames - 1,
-        Math.floor(scrollFraction * totalFrames)
-    );
-
-    let frameNumber = String(frameIndex + 1).padStart(3, '0');
-    frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+  requestAnimationFrame(() => {
+    image.src = currentFrame(frameIndex);
+    render();
+  });
 });
 
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  render();
+});
 </script>
 
 </body>
