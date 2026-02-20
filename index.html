@@ -7,22 +7,22 @@
 
 <style>
 
-/* ===== Background Video ===== */
-#bg-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-/* ===== Body ===== */
+/* ===== Animated Gradient Background ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: white;
+    height: 100vh;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000428);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+/* Background animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ===== Main Container ===== */
@@ -31,7 +31,7 @@ body {
     margin: 50px auto;
 }
 
-/* ===== Glass Section Style ===== */
+/* ===== Glass Section ===== */
 .section {
     background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(15px);
@@ -45,30 +45,16 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Headings ===== */
-h1 {
-    font-size: 36px;
-    margin-bottom: 5px;
-}
+h1 { font-size: 36px; margin-bottom: 5px; }
+h2 { border-left: 4px solid #00ffff; padding-left: 10px; }
 
-h2 {
-    margin-top: 0;
-    border-left: 4px solid #00ffff;
-    padding-left: 10px;
-}
-
-/* ===== Text ===== */
 p, li {
     line-height: 1.6;
     text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 
-/* ===== List ===== */
-ul {
-    padding-left: 20px;
-}
+ul { padding-left: 20px; }
 
-/* ===== Footer ===== */
 .footer {
     text-align: center;
     padding: 20px;
@@ -81,11 +67,6 @@ ul {
 
 <body>
 
-<!-- Background Video -->
-<video autoplay muted loop id="bg-video">
-    <source src="background.mp4" type="video/mp4">
-</video>
-
 <div class="main-container">
 
     <div class="section">
@@ -96,64 +77,8 @@ ul {
     <div class="section">
         <h2>Profile Summary</h2>
         <p>
-            Focused and detail-oriented Electronics and Communication Engineering student with a CGPA of 8.23. 
-            Skilled in PLC programming, sensor integration, embedded systems, and industrial automation. 
-            Strong foundation in analog and digital electronics, signals & systems, and communication engineering.
+            Focused and detail-oriented Electronics and Communication Engineering student with CGPA 8.23...
         </p>
-    </div>
-
-    <div class="section">
-        <h2>Education</h2>
-        <p><strong>B.E Electronics and Communication Engineering (2022–2026)</strong><br>
-        Government College of Engineering, Tirunelveli<br>
-        CGPA: 8.23</p>
-
-        <p><strong>12th Standard (2022)</strong><br>
-        Rosemary Matric Hr. Sec. School<br>
-        540 / 600</p>
-
-        <p><strong>10th Standard (2020)</strong><br>
-        Rosemary Matric Hr. Sec. School<br>
-        450 / 500</p>
-    </div>
-
-    <div class="section">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Programming:</strong> C, Python</li>
-            <li><strong>Core Engineering:</strong> PLC Programming, Industrial Automation, Sensors & Embedded Systems</li>
-            <li><strong>Tools & Platforms:</strong> Arduino, SCADA Basics, Ladder Logic</li>
-            <li><strong>Soft Skills:</strong> Communication, Teamwork, Adaptability</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Projects</h2>
-        <p><strong>Industrial Automation using PLC</strong><br>
-        Designed and programmed a PLC-based system to automate sequential industrial processes using ladder logic.</p>
-
-        <p><strong>Garbage Segregation System</strong><br>
-        Built an automated waste classification system using proximity and moisture sensors with Arduino.</p>
-
-        <p><strong>Water Level Indicator</strong><br>
-        Developed a transistor-based water monitoring circuit with LED and buzzer alerts.</p>
-    </div>
-
-    <div class="section">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Industrial Automation & PLC Fundamentals – LinkedIn Learning</li>
-            <li>Python for Engineers – Coursera</li>
-            <li>Introduction to IoT & Embedded Systems – Microsoft Learn</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Contact</h2>
-        <p>Email: kiruthika@email.com</p>
-        <p>Phone: +91 9XXXX XXXXX</p>
-        <p>LinkedIn: linkedin.com/in/kiruthika</p>
-        <p>GitHub: github.com/kiruthika</p>
     </div>
 
 </div>
