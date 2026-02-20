@@ -1,68 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiruthika | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiruthika | ECE Portfolio</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background: #0f172a;
+        color: #f1f5f9;
+        overflow-x: hidden;
+    }
+
+    /* ===== Scroll Animation Background ===== */
+    #animation-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+        opacity: 0.08; /* Watermark transparency */
+    }
+
+    #animation-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+        width: 85%;
+        max-width: 1000px;
+        margin: auto;
+        padding: 60px 0;
+    }
+
+    section {
+        margin-bottom: 80px;
+    }
+
+    h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #38bdf8;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        border-left: 4px solid #38bdf8;
+        padding-left: 10px;
+    }
+
+    p {
+        line-height: 1.7;
+        margin-bottom: 15px;
+        color: #cbd5e1;
+    }
+
+    ul {
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #e2e8f0;
+    }
+
+    .card {
+        background: rgba(15, 23, 42, 0.85);
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #38bdf8;
+    }
+
+    .highlight {
+        color: #38bdf8;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px 0;
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    a {
+        color: #38bdf8;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
 </head>
+
 <body>
 
-    <canvas id="hero-canvas"></canvas>
+<!-- Scroll Animation Background -->
+<div id="animation-container">
+    <img id="frame" src="frames/ezgif-frame-001.jpg">
+</div>
 
-    <main>
-        <section class="panel">
-            <div class="glass-card">
-                <h1>Kiruthika</h1>
-                <p>ECE Student & Industrial Automation Enthusiast</p>
-                <p class="scroll-hint">Scroll to explore ↓</p>
-            </div>
-        </section>
+<div class="container">
 
-        <section class="panel">
-            <div class="glass-card">
-                <h2>Technical Skills</h2>
-                <ul>
-                    <li>PLC Programming (Siemens/Allen-Bradley)</li>
-                    <li>Industrial Automation & SCADA</li>
-                    <li>Embedded Systems & Sensors</li>
-                    <li>C & Python Programming</li>
-                </ul>
-            </div>
-        </section>
+    <section>
+        <h1>Kiruthika</h1>
+        <p class="highlight">ECE Student | Industrial Automation Enthusiast | Problem Solver</p>
+    </section>
 
-        <section class="panel">
-            <div class="glass-card">
-                <h2>Key Projects</h2>
-                <h3>Industrial Automation using PLC</h3>
-                <p>Automated sequential processes reducing manual intervention by 40%.</p>
-                <h3>Garbage Segregation System</h3>
-                <p>Smart classification using Arduino and Moisture/IR sensors.</p>
-            </div>
-        </section>
-
-        <section class="panel">
-            <div class="glass-card">
-                <h2>Education</h2>
-                <p><strong>B.E. ECE</strong> - GCE Tirunelveli</p>
-                <p>CGPA: 8.23</p>
-                <p>Class of 2026</p>
-            </div>
-        </section>
-    </main>
-
-    <div id="chat-container">
-        <div id="chat-window">
-            <div id="chat-header">Kiruthika's AI Assistant</div>
-            <div id="chat-messages"></div>
-            <div class="chat-input-area">
-                <input type="text" id="user-input" placeholder="Ask about her skills...">
-                <button id="send-btn">Send</button>
-            </div>
+    <section>
+        <h2>Profile Summary</h2>
+        <div class="card">
+            <p>
+            Focused and detail-oriented Electronics and Communication Engineering student with a CGPA of 8.23.
+            Skilled in PLC programming, sensor integration, embedded systems, and industrial automation.
+            Strong foundation in analog and digital electronics, signals & systems, and communication engineering.
+            Committed to building reliable, real-world automation solutions with a disciplined and problem-solving mindset.
+            </p>
         </div>
-        <button id="chat-toggle">💬</button>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section>
+        <h2>Education</h2>
+        <div class="card">
+            <p><span class="highlight">B.E. Electronics and Communication Engineering (2022–2026)</span><br>
+            Government College of Engineering, Tirunelveli<br>
+            CGPA: 8.23</p>
+
+            <p><span class="highlight">12th Standard (2022)</span><br>
+            Rosemary Matric Hr. Sec. School, Tirunelveli<br>
+            540 / 600</p>
+
+            <p><span class="highlight">10th Standard (2020)</span><br>
+            Rosemary Matric Hr. Sec. School, Tirunelveli<br>
+            450 / 500</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="card">
+            <ul>
+                <li><b>Programming:</b> C, Python</li>
+                <li><b>Core Engineering:</b> PLC Programming, Industrial Automation, Sensors & Embedded Systems</li>
+                <li><b>Tools & Platforms:</b> Arduino, SCADA Basics, Ladder Logic</li>
+                <li><b>Soft Skills:</b> Communication, Teamwork, Adaptability</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+
+        <div class="card">
+            <p class="highlight">Industrial Automation using PLC</p>
+            <p>Designed and programmed a PLC-based system to automate sequential industrial processes.
+            Worked on ladder logic, I/O configuration, and real-time monitoring.
+            Application in manufacturing and conveyor systems.</p>
+        </div>
+
+        <div class="card">
+            <p class="highlight">Garbage Segregation System</p>
+            <p>Built an automated waste classification system using proximity and moisture sensors with
+            Arduino and Embedded C. Improved waste segregation accuracy for smart waste management.</p>
+        </div>
+
+        <div class="card">
+            <p class="highlight">Water Level Indicator</p>
+            <p>Developed a transistor-based water level monitoring circuit with LED and buzzer alerts
+            to prevent overflow and dry-run conditions.</p>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <div class="card">
+            <ul>
+                <li>Industrial Automation & PLC Fundamentals – LinkedIn Learning</li>
+                <li>Python for Engineers – Google / Coursera</li>
+                <li>Introduction to IoT & Embedded Systems – Microsoft Learn</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <div class="card">
+            <p>Email: kiruthika@email.com</p>
+            <p>Phone: +91 98XXX XXXXX</p>
+            <p>LinkedIn: <a href="#">linkedin.com/in/kiruthika</a></p>
+            <p>GitHub: <a href="#">github.com/kiruthika</a></p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Kiruthika. Built with precision & purpose.
+</footer>
+
+<script>
+    const frame = document.getElementById('frame');
+    const totalFrames = 240;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollFraction = scrollTop / docHeight;
+
+        const frameIndex = Math.min(
+            totalFrames - 1,
+            Math.floor(scrollFraction * totalFrames)
+        );
+
+        const frameNumber = String(frameIndex + 1).padStart(3, '0');
+        frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+    });
+</script>
+
 </body>
 </html>
+   
